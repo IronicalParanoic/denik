@@ -25,12 +25,14 @@ def vymaz_denik(name):
 def nacist_denik(name):
 	with open(denik_path(name), 'r') as f:
 		if f.read():
-			print(json.loads(f))
+			denik = eval(f.read())
 			f.close()
+			return denik
 		else:
 			print("\nV deníku nemáte žádné zápisy.")
+			f.close()
     
-def ulozit_denik(zapis, name):
+def ulozit_denik(name, zapis):
 	with open(denik_path(name), 'w') as f:
 		f.write(json.dumps(zapis))
 		f.close()
