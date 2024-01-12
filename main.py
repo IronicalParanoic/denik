@@ -1,31 +1,35 @@
 from modules import *
 from second_page import second_page
 
-print("##### Vítejte ve své Čtenářské knihovně! #####")
+print(da_book)
+print(vitejte_str)
 
 while(True):
+	print(rozdeleni)
+
 	files = seznam_deniku()
 	if len(files) != 0:
-		print("\nVaše deníky: " + str(files))
+		print("\nVaše deníky: ")
+		print(*files, sep = ', ')
 	else:
-		print("\nZatím nemáte žádné deníky.")
-	print("\nPro vytvoření nového deníku napište [ vytvoř ]. \nPro výběr deníku napište [ otevři (název deníku) ] bez závorek. \nPro zrušení deníku napiš [ zruš (název deníku) ]. \nPro ukončení programu zmáčněte [ x ]. \n")
+		print(zadne_deniky_str)
+	print(menu1_str)
 
 	vyber = input()
-	if vyber == 'vytv':
-		vytvorit_novy_denik(input('Zadejte název nového deníku: '))
-		print('\nDeník vytvořen.')
-	elif vyber.startswith('zr'):
+	if vyber == 'vytvořit':
+		vytvorit_novy_denik(input(novy_denik_str))
+		print(denik_vytvoren_str)
+	elif vyber.startswith('zrušit'):
 		nazev_deniku = vyber.split(' ', 1)[1]
 		vymaz_denik(nazev_deniku)
-		print('\nDeník zrušen.')
-	elif vyber.startswith('otev'):
+		print(denik_zrusen_str)
+	elif vyber.startswith('otevři'):
 		nazev_deniku = vyber.split(' ', 1)[1]
-		print("\nOtevírám deník...")
+		print(otevreni_str)
 		otevreny_denik = nacist_denik(nazev_deniku)
 		ulozit_denik(nazev_deniku, second_page(otevreny_denik))
 	elif vyber == 'x':
-		print('### Na shledanou! ###')
+		print(exit_str)
 		break
 
 	#else:

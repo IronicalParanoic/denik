@@ -5,14 +5,14 @@ def denik_path(filename = ""): #bez argumentu funkce vraci path do slozky deniku
 	denik_dir = path.Path.cwd() / 'deniky'
 	if filename != "":
 		denik_dir = denik_dir / f"{filename}.json"
-	return denik_dir
+	return (denik_dir)
 
 def seznam_deniku():
 	files = []
 	for file in denik_path().iterdir():
 		if file.suffix == '.json':
 			files.append(file.stem)
-	return files
+	return (files)
 
 def vytvorit_novy_denik(name):
 	with open(denik_path(name), 'w') as f:
@@ -27,11 +27,11 @@ def nacist_denik(name):
 		contents = f.read()
 		if len(contents) != 0:
 			denik = json.loads(contents)
-			return denik
+			return (denik)
 		else:
-			print("\nV deníku nemáte žádné zápisy.")
-	return None
+			return (0)
     
 def ulozit_denik(name, zapis):
 	with open(denik_path(name), 'w') as f:
 		f.write(json.dumps(zapis))
+	return (None)

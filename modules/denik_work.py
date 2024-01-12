@@ -13,7 +13,7 @@ def najdi_zapis(denik, autor_titul_str):
 	for kniha in denik:
 		for key in kniha.keys()[:2]:
 			if kniha[key] == hledany_dict and kniha[key + 1] == hledany_dict[key + 1]:
-				return kniha
+				return (kniha)
 
 def vymaz_zapis(denik, autor_titul_str):
 	kniha = najdi_zapis(denik, autor_titul_str)
