@@ -1,7 +1,10 @@
 import pathlib as path
 import json
 
-def denik_path(filename = ""): #bez argumentu funkce vraci path do slozky deniku
+#Modul pro práci se soubory
+
+#Práce s directories
+def denik_path(filename = ""): #bez argumentu funkce vrací path do složky deniku
 	denik_dir = path.Path.cwd() / 'deniky'
 	if filename != "":
 		denik_dir = denik_dir / f"{filename}.json"
@@ -22,6 +25,7 @@ def vymaz_denik(name):
 	if denik_path(name).exists():
 		denik_path(name).unlink()
 
+#Otevírání a zabírání souboru
 def nacist_denik(name):
 	with open(denik_path(name), 'r') as f:
 		contents = f.read()

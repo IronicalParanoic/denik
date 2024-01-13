@@ -1,3 +1,4 @@
+#Modul pro práci s dictionaries
 
 def doplnit_denik(denik):
 	print("\nZadejte ve stejném pořadí [ (autor); (titul); (žánry - oddělit čárkami); (rok vydání); (počet stran); (datum přečtení) ]. Pokud nějakou informaci neznáte, napište - . Oddělte čárkami. \n")

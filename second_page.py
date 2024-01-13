@@ -27,7 +27,7 @@ def second_page(denik):
 				autor_titul = vyber.split(' ', 1)[1]
 				vymaz_zapis(denik, autor_titul)
 				print(zapis_vymaz_str)
-		elif vyber == 'x':
+		elif vyber == 'x' or 'X':
 			return (denik)
 			
 		#else:

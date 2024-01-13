@@ -28,7 +28,7 @@ while(True):
 		print(otevreni_str)
 		otevreny_denik = nacist_denik(nazev_deniku)
 		ulozit_denik(nazev_deniku, second_page(otevreny_denik))
-	elif vyber == 'x':
+	elif vyber == 'x' or 'X':
 		print(exit_str)
 		break
 
