@@ -11,11 +11,14 @@ def second_page(denik):
 			print(zadne_zapisy_str)
 		else:
 			print(*denik, sep = ', ')
-		print(menu2_str)
+
+		print(*menu2_str)
 		vyber = input()
 		if vyber == 'doplnit':
-			doplnit_denik(denik)
-			print(doplneno_str)
+			novy_zapis = doplnit_denik()
+			if kontrola_argumentu(novy_zapis, 6) == True:
+				denik.append(novy_zapis)
+				print(doplneno_str)
 		elif vyber.startswith('najdi'):
 			autor_titul = vyber.split(" ", 1)[1]
 			print(najdi_zapis(denik, autor_titul))
@@ -30,7 +33,7 @@ def second_page(denik):
 		elif vyber == 'x' or 'X':
 			return (denik)
 			
-		#else:
-		#	error
+		else:
+			raise VyberError
 	
 #second_page('test')

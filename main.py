@@ -5,32 +5,37 @@ print(da_book)
 print(vitejte_str)
 
 while(True):
-	print(rozdeleni)
+	try:
+		print(rozdeleni)
 
-	files = seznam_deniku()
-	if len(files) != 0:
-		print("\nVaše deníky: ")
-		print(*files, sep = ', ')
-	else:
-		print(zadne_deniky_str)
-	print(menu1_str)
+		files = seznam_deniku()
+		if len(files) != 0:
+			print("\nVaše deníky: ")
+			print(*files, sep = ', ')
+		else:
+			print(zadne_deniky_str)
+		print(menu1_str)
 
-	vyber = input()
-	if vyber == 'vytvořit':
-		vytvorit_novy_denik(input(novy_denik_str))
-		print(denik_vytvoren_str)
-	elif vyber.startswith('zrušit'):
-		nazev_deniku = vyber.split(' ', 1)[1]
-		vymaz_denik(nazev_deniku)
-		print(denik_zrusen_str)
-	elif vyber.startswith('otevři'):
-		nazev_deniku = vyber.split(' ', 1)[1]
-		print(otevreni_str)
-		otevreny_denik = nacist_denik(nazev_deniku)
-		ulozit_denik(nazev_deniku, second_page(otevreny_denik))
-	elif vyber == 'x' or 'X':
-		print(exit_str)
-		break
-
-	#else:
-    #	error
+		vyber = input()
+		if vyber == 'vytvořit':
+			vytvorit_novy_denik(input(novy_denik_str))
+			print(denik_vytvoren_str)
+		elif vyber.startswith('zrušit'):
+			nazev_deniku = vyber.split(' ', 1)[1]
+			vymaz_denik(nazev_deniku)
+			print(denik_zrusen_str)
+		elif vyber.startswith('otevři'):
+			nazev_deniku = vyber.split(' ', 1)[1]
+			otevreny_denik = nacist_denik(nazev_deniku)
+			ulozit_denik(nazev_deniku, second_page(otevreny_denik))
+		elif vyber in ['x', 'X']:
+			print(exit_str)
+			break
+		else:
+			raise VyberError
+	except VyberError:
+		print(vyber_err_str)
+	except NameError as nameerr:
+		print(nameerr)
+	except KeyError:
+		print(arg_err_str)
