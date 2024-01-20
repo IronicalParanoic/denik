@@ -1,4 +1,6 @@
-from modules import *
+from modules.text_work import *
+from modules.knihovna_work import *
+from modules.my_errors import VyberError
 from second_page import second_page
 
 print(da_book)
@@ -20,10 +22,12 @@ while(True):
 		if vyber == 'vytvořit':
 			vytvorit_novy_denik(input(novy_denik_str))
 			print(denik_vytvoren_str)
+			input(enter)
 		elif vyber.startswith('zrušit'):
 			nazev_deniku = vyber.split(' ', 1)[1]
 			vymaz_denik(nazev_deniku)
 			print(denik_zrusen_str)
+			input(enter)
 		elif vyber.startswith('otevři'):
 			nazev_deniku = vyber.split(' ', 1)[1]
 			otevreny_denik = nacist_denik(nazev_deniku)
@@ -33,9 +37,9 @@ while(True):
 			break
 		else:
 			raise VyberError
+
 	except VyberError:
 		print(vyber_err_str)
 	except NameError as nameerr:
 		print(nameerr)
-	except KeyError:
-		print(arg_err_str)
+		input(enter)
