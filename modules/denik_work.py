@@ -1,3 +1,4 @@
+import pprint as p
 from .text_work import *
 from .my_errors import kontrola_argumentu, ArgError
 
@@ -19,13 +20,20 @@ def najdi_zapis(denik, autor_titul_str):
 	if kontrola_argumentu(aut_tit_list, 2):		
 		hledany_dict = dict(zip(['autor', 'titul'], aut_tit_list))
 		for kniha in denik:
-			if kniha['autor'] == hledany_dict['autor'] and kniha['titul'] == hledany_dict['titul']:
+			if all([kniha[key] == hledany_dict[key] for key in hledany_dict.keys()]):
 				return (kniha)
-			else:
-				raise ValueError(zapis_neni_str)
+		raise ValueError(zapis_neni_str)
 	else:
 		raise ArgError
 
 def vymaz_zapis(denik, autor_titul_str):
 	kniha = najdi_zapis(denik, autor_titul_str)
 	denik.remove(kniha)
+
+def krasny_print(denik):
+	if type(denik) == list:
+		for kniha in denik:
+			p.pprint(kniha, sort_dicts=False)
+			print('\n')
+	else:
+		p.pprint(denik, sort_dicts=False)

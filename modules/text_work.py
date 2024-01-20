@@ -34,4 +34,4 @@ da_book = """
 (______(/
 """
 rozdeleni = '\n~ 🕮  ~' #"=^..^= 9"
-enter = "\033[4mPro návrat zpět stiskněte ENTER.\033[0m"
+enter = "\n\033[4mPro návrat zpět stiskněte ENTER.\033[0m"

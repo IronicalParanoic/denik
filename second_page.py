@@ -13,7 +13,7 @@ def second_page(denik):
 			if denik == []:
 				print(zadne_zapisy_str)
 			else:
-				print(denik)
+				krasny_print(denik)
 
 			print(menu2_str)
 			vyber = input()
@@ -25,7 +25,7 @@ def second_page(denik):
 			elif vyber.startswith('najdi'):
 				autor_titul = vyber.split(" ", 1)[1]
 				najdeny_zapis = najdi_zapis(denik, autor_titul)
-				print(najdeny_zapis)
+				krasny_print(najdeny_zapis)
 				input(enter)
 			elif vyber.startswith('vymazat'):
 				if vyber == 'vymazat':

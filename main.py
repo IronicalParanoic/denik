@@ -22,7 +22,6 @@ while(True):
 		if vyber == 'vytvořit':
 			vytvorit_novy_denik(input(novy_denik_str))
 			print(denik_vytvoren_str)
-			input(enter)
 		elif vyber.startswith('zrušit'):
 			nazev_deniku = vyber.split(' ', 1)[1]
 			vymaz_denik(nazev_deniku)
