@@ -2,7 +2,6 @@ from modules.text_work import *
 from modules.denik_work import *
 
 def second_page(denik):
-
 	if denik == 0:
 		denik = []
 
@@ -39,7 +38,6 @@ def second_page(denik):
 					print(vyber_err_str)
 			elif vyber == 'upravit':
 				uprav_zapis(denik)
-				
 			elif vyber == 'x' or 'X':
 				return (denik)
 			else:

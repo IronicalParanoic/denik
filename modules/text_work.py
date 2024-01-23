@@ -18,7 +18,7 @@ komplet_vymaz_str = "\033[3mZáznamy vymazány.\033[0m\n"
 zapis_vymaz_str = "\033[3mZápis vymazán.\033[0m\n"
 vymaz_str = "Pokud si přejete vymazat zápis, zadejte \033[31m zápis \033[0m. Pokud chcete vymazat deník, napište \033[31m deník \033[0m.\n"
 upravit_str = "Co si přejete upravit? Zadejte \033[35m autor / titul / žánry / rok / strany / datum \033[0m. Pokud již máte vše upraveno, zmáčkněte ENTER.\n"
-upraveno_str = "\033[3mUpraveno.\033[0m."
+upraveno_str = "\033[3mUpraveno.\033[0m\n."
 
 #errors, style: "\033[31m \033[0m\n"
 vyber_err_str = "\033[31mNeplatný příkaz, zkuste znovu.\033[0m\n"

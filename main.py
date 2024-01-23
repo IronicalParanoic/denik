@@ -4,7 +4,6 @@ from second_page import second_page
 
 print(da_book)
 print(vitejte_str)
-
 while(True):
 	try:
 		print(rozdeleni)

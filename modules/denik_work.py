@@ -33,16 +33,22 @@ def uprav_zapis(denik):
 		vyber = input(upravit_str)
 		if vyber == 'autor':
 			kniha['autor'] = input(novy_str)
+			print(upraveno_str)
 		elif vyber == 'titul':
 			kniha['titul'] = input(novy_str)
+			print(upraveno_str)
 		elif vyber == 'žánry':
 			kniha['zanry'] = input(novy_str)
+			print(upraveno_str)
 		elif vyber == 'rok':
 			kniha['rok'] = input(novy_str)
+			print(upraveno_str)
 		elif vyber == 'strany':
 			kniha['strany'] = input(novy_str)
+			print(upraveno_str)
 		elif vyber == 'datum':
 			kniha['datum'] = input(novy_str)
+			print(upraveno_str)
 		elif vyber == '':
 			break
 		else:
