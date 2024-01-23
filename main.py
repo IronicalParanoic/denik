@@ -1,6 +1,5 @@
 from modules.text_work import *
 from modules.knihovna_work import *
-from modules.my_errors import VyberError
 from second_page import second_page
 
 print(da_book)
@@ -35,10 +34,8 @@ while(True):
 			print(exit_str)
 			break
 		else:
-			raise VyberError
+			print(vyber_err_str)
 
-	except VyberError:
-		print(vyber_err_str)
 	except NameError as nameerr:
 		print(nameerr)
 		input(enter)
